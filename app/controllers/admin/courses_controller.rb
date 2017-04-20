@@ -50,7 +50,7 @@ before_action :require_is_admin
       private
 
       def course_params
-        params.require(:course).permit(:title, :description)
+        params.require(:course).permit(:title, :description, :is_hidden)
       end
 
 

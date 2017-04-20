@@ -2,7 +2,7 @@ class CoursesController < ApplicationController
 before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy, :follow, :unfollow]
 
     def index
-      @courses = Course.all
+      @courses = Course..where(:is_hidden => false).order("created_at DESC")
 
     end
 
@@ -50,7 +50,7 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
     private
 
     def course_params
-      params.require(:course).permit(:title, :description)
+      params.require(:course).permit(:title, :description, :is_hidden)
     end
 
 
