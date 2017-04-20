@@ -1,6 +1,8 @@
 class Admin::CoursesController < ApplicationController
 before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy, :follow, :unfollow]
 before_action :require_is_admin
+layout "admin"
+
       def index
         @courses = Course.all
 
@@ -45,6 +47,18 @@ before_action :require_is_admin
 
         redirect_to admin_courses_path, alert: "删除成功"
 
+      end
+
+      def publish
+        @course = Course.find(params[:id])
+        @course.publish!
+        redirect_to :back
+      end
+
+      def hide
+        @course = Course.find(params[:id])
+        @course.hide!
+        redirect_to :back
       end
 
       private

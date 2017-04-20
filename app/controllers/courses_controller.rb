@@ -2,7 +2,7 @@ class CoursesController < ApplicationController
 before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy, :follow, :unfollow]
 
     def index
-      @courses = Course..where(:is_hidden => false).order("created_at DESC")
+      @courses = Course.where(:is_hidden => false).order("created_at DESC")
 
     end
 
@@ -12,6 +12,11 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
 
     def show
       @course = Course.find(params[:id])
+
+      if @course.is_hidden
+      flash[:warning] = "This course already archived"
+      redirect_to root_path
+      end
     end
 
     def edit
