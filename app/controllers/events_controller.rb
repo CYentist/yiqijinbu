@@ -23,7 +23,7 @@ class EventsController < ApplicationController
     @event.user = current_user
 
     if @event.save
-      flash[:notice] = "成功提交简历"
+      flash[:notice] = "成功发起活动"
       redirect_to course_path(@course)
     else
       render :new

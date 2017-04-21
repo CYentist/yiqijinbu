@@ -1,7 +1,6 @@
 class Course < ApplicationRecord
-  belongs_to :users
-  has_many :events
 
+  has_many :events
   validates :title, presence: true
 
   def publish!

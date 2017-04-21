@@ -5,8 +5,8 @@
 
 </p>
 
-<%= link_to("Write a Post", new_course_event_path(@course), class: "btn btn-default pull-right")%>
+<%= link_to("发起活动", new_course_event_path(@course), class: "btn btn-default pull-right")%>
 <div>
-  <h2><%= @course.title %>活动列表</h2>
-  <%= render :partial => "events/events", :collection => @events, :as => :event %>
+
+  <%= render :partial => "events", :collection => @events, :as => :event %>
 </div>

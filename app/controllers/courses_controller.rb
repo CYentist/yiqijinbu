@@ -12,6 +12,7 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
 
     def show
       @course = Course.find(params[:id])
+      @events = @course.events.order('created_at DESC')
 
       if @course.is_hidden
       flash[:warning] = "This course already archived"

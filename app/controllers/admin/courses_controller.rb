@@ -22,8 +22,8 @@ layout "admin"
 
       def create
         @course = Course.new(course_params)
+        
         if @course.save
-
           redirect_to admin_courses_path
         else
           render :new

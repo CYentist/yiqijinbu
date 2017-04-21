@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :courses
-  has_many :events
   
+  has_many :events
+
    def admin?
      is_admin
    end
