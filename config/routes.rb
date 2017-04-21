@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :courses
+
+  resources :courses do
+    resources :events
+  end
+
   root 'courses#index'
 
   namespace :admin do
@@ -12,5 +16,5 @@ Rails.application.routes.draw do
       end
     end
   end
-  
+
 end

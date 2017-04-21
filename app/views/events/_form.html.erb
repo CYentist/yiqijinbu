@@ -1,0 +1,14 @@
+<%= simple_form_for [@course, @event] do |f| %>
+  <div class="form-course">
+    <%= f.input :title %>
+    <%= f.input :description, input_html: { class: "form-control"} %>
+    <%= f.input :schedule %>
+    <%= f.input :city %>
+    <%= f.input :is_online %>
+    <%= f.input :contact_name %>
+    <%= f.input :contact_number %>
+  </div>
+  <div class="form-actions">
+    <%= f.submit "Submit", disable_with: "Submiting...", class: "btn btn-primary"%>
+  </div>
+<% end %>
