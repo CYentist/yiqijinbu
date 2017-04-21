@@ -24,3 +24,107 @@
     font-size: 12px;
     text-align: center;
 }
+
+//-- meetup list from fullstack
+.meetup-lists {
+    width: 100%;
+    text-align: left;
+    color: #838B8D;
+    box-sizing: border-box;
+    display: block;
+}
+
+.list-item {
+    margin: 10px 0;
+    background-color: rgba(248,249,250,0.72);
+    height: 65px;
+    line-height: 65px;
+    width: 100%;
+    display: inline-flex;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+
+
+.name {
+    padding-left: 20px;
+    width: calc(100% - 530px);
+    min-width: 210px;
+    float: left;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+.city {
+    width: 105px;
+    min-width: 105px;
+    float: left;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+.time {
+    width: 225px;
+    min-width: 225px;
+    float: left;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+.contact {
+    width: 210px;
+    min-width: 210px;
+    float: left;
+    word-wrap: break-word;
+    overflow: hidden;
+  }
+.option {
+    width: 95px;
+    min-width: 95px;
+    float: left;
+    word-wrap: break-word;
+}
+.btn-view {
+    height: 28px;
+    width: 60px;
+    line-height: 28px;
+    padding: 0;
+    border: 0;
+    border-radius: 15px;
+    color: #1EAFFC;
+    background-color: #fff;
+    border: 1px solid #1EAFFC;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-family: PingFangSC-Light;
+    text-align: center;
+}
+.meetup-block  {
+    border-radius: 3px;
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 12px;
+}
+span.online {
+    background: #1EAFFC;
+}
+span.label-def{
+    background: #AA66CC;
+}
+span.offline {
+    background: #78909C;
+}
+
+body {
+    font-family: Verdana,"Helvetica Neue",Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+    background-color: #f9f9fa;
+    color: #333;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333333;
+    background-color: #fff;
+}

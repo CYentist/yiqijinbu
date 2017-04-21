@@ -1,0 +1,17 @@
+<div class="list-item">
+  <div class="name">
+    <span class="meetup-name"><%= link_to(event.title, course_events_path(event)) %></span>
+  </div>
+  <div class="city">
+    <span><%= event.city %></span>
+  </div>
+  <div class="time">
+    <span><%= event.schedule %></span>
+  </div>
+  <div class="contact">
+    <span><%= event.user.email %></span>
+  </div>
+  <div class="option">
+    <%= link_to("查看", course_events_path(event),class:"btn btn-view")%>
+  </div>
+</div>
