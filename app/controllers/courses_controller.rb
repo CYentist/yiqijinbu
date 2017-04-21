@@ -53,6 +53,30 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
 
     end
 
+    def follow
+        @course = Course.find(params[:id])
+
+        if !current_user.is_follower?(@course)
+          current_user.follow!(@course)
+          flash[:notice] = "关注成功"
+        else
+          flash[:warning] = "已经关注"
+        end
+
+        redirect_to course_path(@course)
+      end
+
+      def unfollow
+        @course = Course.find(params[:id])
+
+        if current_user.is_follower?(@course)
+          current_user.unfollow!(@course)
+          flash[:alert] = "成功取消关注"
+        else
+          flash[:warning] = "您并未关注"
+        end
+        redirect_to course_path(@course)
+      end
     private
 
     def course_params

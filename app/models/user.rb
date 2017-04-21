@@ -14,4 +14,14 @@ class User < ApplicationRecord
      is_admin
    end
 
+   def is_follower?(course)
+    followed_courses.include?(course)
+  end
+  def follow!(course)
+   followed_courses << course
+  end
+
+  def unfollow!(course)
+   followed_courses.delete(course)
+  end
 end
