@@ -27,7 +27,7 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
     def create
       @course = Course.new(course_params)
       if @course.save
-
+        current_user.follow!(@course)
         redirect_to courses_path
       else
         render :new

@@ -1,7 +1,7 @@
 <h2><%= @course.title %>活动列表</h2>
 <div class="list-item">
   <div class="name">
-    <span class="meetup-name"><%= link_to(event.title, course_events_path(event)) %></span>
+    <span class="meetup-name"><%= link_to(event.title, admin_course_event_path(@course,event)) %></span>
   </div>
   <div class="city">
     <span><%= event.city %></span>
@@ -13,6 +13,6 @@
     <span><%= event.user.email %></span>
   </div>
   <div class="option">
-    <%= link_to("查看", course_events_path(event),class:"btn btn-view")%>
+    <%= link_to("查看", admin_course_event_path(@course,event), class:"btn btn-view")%>
   </div>
 </div>
