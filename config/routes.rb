@@ -7,7 +7,9 @@ Rails.application.routes.draw do
       post :follow
       post :unfollow
     end
-    resources :events
+    resources :events do
+      resources :posts
+    end
   end
 
   root 'courses#index'

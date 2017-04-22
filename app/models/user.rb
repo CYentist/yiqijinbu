@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :courses
   has_many :course_relationships
   has_many :followed_courses, :through => :course_relationships, :source => :course
+  has_many :posts
 
    def admin?
      is_admin

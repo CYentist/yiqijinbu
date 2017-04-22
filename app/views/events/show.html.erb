@@ -1,3 +1,18 @@
 <div class="col-md-4 col-md-offset-4">
-  <h2><%= @event.description %></h2>
+  <h2><%= @event.title %></h2>
+  <table>
+    <tr>
+    <td><%= @event.description %></td>
+    <td><%= @event.schedule %></td>
+    <td><%= @event.city %></td>
+    <td><%= @event.contact_name %></td>
+    <td><%= @event.contact_number %></td>
+    </tr>
+  </table>
+  <div>
+  <%= render :partial => "posts/post", :collection => @posts, :as => :post %>
+</div>
+</div class="col-md-4 col-md-offset-4">
+<div align="center">
+        <%= link_to("回复", new_course_event_post_path(@course, @event), class: "btn btn-default") %>
 </div>
