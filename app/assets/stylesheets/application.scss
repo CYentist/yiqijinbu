@@ -19,6 +19,138 @@
 @import "bootstrap";
 @import "font-awesome";
 
+// landing page
+.lp-part-1 {
+    display: block;
+    background: #E91E63;
+    background-image: url('<%= asset_path("part1.jpg")%>');
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: cover;
+    margin: 0px auto 0px auto ;
+    width: 100%;
+    min-width: 960px;
+    height: 450px;
+    position: relative;
+    h1 {
+        font-size: 44px;
+        line-height: 56px;
+        color: white;
+    }
+    h2 {
+        font-size: 18px;
+        line-height: 44px;
+        color: white;
+        font-weight: 200;
+    }
+}
+.lp-block-1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    height: 450px;
+    position: relative;
+    text-align: center;
+    padding-top: 100px;
+}
+.lp-block-1-button {
+    border-radius: 25px;
+    background: transparent;
+    display: inline-block;
+    border: 2px solid #fff;
+    color: #fff;
+    line-height: 1;
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 14px 70px 13px;
+    margin-right: 10px;
+    margin-top: 20px;
+    }
+.lp-block-1-button:hover{
+    background-color: white;
+    text-decoration: none;
+  }
+
+.lp-part-2 {
+    display: block;
+    width: 100%;
+    height: 550px;
+    min-width: 960px;
+
+    .lp-block-2 {
+        display: block;
+        width: 960px;
+        height: 550px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        text-align: center;
+        padding-top: 60px;
+
+      .block-p {
+          display: block;
+          width: 650px;
+          height: 60px;
+          margin-left: auto;
+          margin-right: auto;
+          position: relative;
+          padding-top: 10px;
+
+      }
+      h2 {
+            font-size: 32px;
+            line-height: 44px;
+            font-weight: bold;
+        }
+      .advantages {
+            color: #777777;
+            font-size: 16px;
+            line-height: 24px;
+        }
+      .pom-box {
+            width: 100px;
+            height: auto;
+            color: black;
+            font-size: 8em;
+            display: inline-block; margin-right: 10px;
+            margin-bottom: 10px;
+        }
+      .pom-box:hover {
+            color:#E91E63;
+      }
+    }
+}
+.p-pom-box-47 {
+    display: block;
+    // background: white;
+    border-style: none;
+    border-radius: 0;
+    // top: 20%;
+    z-index: 38;
+    width: 300px;
+    height: 200px;
+    position: relative;
+    margin-left: 20px;
+    margin-top: 40px;
+    float: left;
+    background-color: white;
+    h3 {
+        color: #E91E63;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    p {
+        font-size: 14px;
+        line-height: 24px;
+        color: #777777;
+        width: 260px;
+        margin-left: 20px;
+    }
+}
+
 .content-footer p {
     color: #6d6d6d;
     font-size: 12px;

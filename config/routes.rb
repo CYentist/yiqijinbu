@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'courses#index'
+  root 'welcome#index'
 
   namespace :admin do
     resources :courses do
