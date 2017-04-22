@@ -20,5 +20,5 @@
 <%= link_to("发起活动", new_course_event_path(@course), class: "btn btn-default pull-right")%>
 <div>
 
-  <%= render :partial => "events", :collection => @events, :as => :event %>
+  <%= render :partial => "events/events", :collection => @events, :as => :event %>
 </div>

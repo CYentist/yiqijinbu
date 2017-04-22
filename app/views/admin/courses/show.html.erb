@@ -1,6 +1,13 @@
 <h1> <%= @course.title %> </h1>
 
+
 <p>
   <%= simple_format(@course.description) %>
 
 </p>
+
+<%= link_to("发起活动", new_course_event_path(@course), class: "btn btn-default pull-right")%>
+<div>
+
+  <%= render :partial => "admin/events/events", :collection => @events, :as => :event %>
+</div>

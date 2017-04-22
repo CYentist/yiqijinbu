@@ -14,6 +14,7 @@ layout "admin"
 
       def show
         @course = Course.find(params[:id])
+        @events = @course.events.order('created_at DESC')
       end
 
       def edit
@@ -22,7 +23,7 @@ layout "admin"
 
       def create
         @course = Course.new(course_params)
-        
+
         if @course.save
           redirect_to admin_courses_path
         else

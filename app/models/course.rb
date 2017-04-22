@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
-  belongs_to :user
+  
   has_many :events
   has_many :course_relationships
   has_many :followers, through: :course_relationships, source: :user
