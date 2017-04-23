@@ -10,7 +10,7 @@
 
         <% else %>
 
-          <%= link_to(" 未关注", follow_course_path(course), method: :post, class: "fa fa-heart-o") %>
+          <%= link_to(" 未关注", follow_course_path(@course), method: :post, class: "fa fa-heart-o") %>
         <% end %></div>
   </div>
 </div>
@@ -21,11 +21,25 @@
     <%= simple_format(@course.description) %>
 </div>
 
-
+<div class="empty"></div>
 <div class="container">
 <%= link_to("发起活动", new_course_event_path(@course), class: "btn btn-default pull-right")%>
 <div>
 
+  <table class="table table-boldered table-striped custab">
+    <thead>
+        <tr>
+            <td>标题</td>
+            <td>城市</td>
+            <td>活动时间</td>
+            <td>联系人</td>
+            <td>联系方式</td>
+            <td>发布时间</td>
+            <td>选项</td>
+        </tr>
+    </thead>
+
   <%= render :partial => "events/events", :collection => @events, :as => :event %>
+  </table>
 </div>
 </div>

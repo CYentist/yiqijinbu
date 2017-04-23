@@ -1,18 +1,28 @@
-<h2><%= @course.title %>活动列表</h2>
-<div class="list-item">
-  <div class="name">
-    <span class="meetup-name"><%= link_to(event.title, course_event_path(@course,event)) %></span>
-  </div>
-  <div class="city">
-    <span><%= event.city %></span>
-  </div>
-  <div class="time">
-    <span><%= event.schedule %></span>
-  </div>
-  <div class="contact">
-    <span><%= event.user.email %></span>
-  </div>
-  <div class="option">
-    <%= link_to("查看", course_event_path(@course,event), class:"btn btn-view")%>
-  </div>
-</div>
+
+
+    
+    <tbody>
+      <tr>
+          <td>
+            <%= link_to(event.title, course_event_path(@course,event)) %>
+          </td>
+          <td>
+            <%= event.city %>
+          </td>
+          <td>
+            <%= event.schedule %>
+          </td>
+          <td>
+            <%= event.contact_name %>
+          </td>
+          <td>
+            <%= event.contact_number %>
+          </td>
+          <td>
+            <%= event.created_at %>
+          </td>
+          <td>
+            <%= link_to("查看", course_event_path(@course,event), class:"btn btn-view")%>
+          </td>
+      </tr>
+  </tbody>
