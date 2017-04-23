@@ -20,6 +20,7 @@ class EventsController < ApplicationController
     @course = Course.find(params[:course_id])
     @event = Event.find(params[:id])
     @posts = @event.posts.order('created_at DESC')
+    @post = Post.new
   end
 
   def create
