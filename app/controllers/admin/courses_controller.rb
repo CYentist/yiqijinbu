@@ -65,7 +65,7 @@ layout "admin"
       private
 
       def course_params
-        params.require(:course).permit(:title, :description, :is_hidden)
+        params.require(:course).permit(:title, :description, :is_hidden, :image)
       end
 
 

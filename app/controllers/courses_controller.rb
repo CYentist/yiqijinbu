@@ -80,7 +80,7 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
     private
 
     def course_params
-      params.require(:course).permit(:title, :description, :is_hidden)
+      params.require(:course).permit(:title, :description, :is_hidde, :image)
     end
 
 
