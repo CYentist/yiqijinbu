@@ -58,12 +58,11 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
 
         if !current_user.is_follower?(@course)
           current_user.follow!(@course)
-          flash[:notice] = "关注成功"
         else
           flash[:warning] = "已经关注"
         end
 
-        redirect_to course_path(@course)
+        redirect_to :back
       end
 
       def unfollow
@@ -71,11 +70,10 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
 
         if current_user.is_follower?(@course)
           current_user.unfollow!(@course)
-          flash[:alert] = "成功取消关注"
         else
           flash[:warning] = "您并未关注"
         end
-        redirect_to course_path(@course)
+        redirect_to :back
       end
     private
 

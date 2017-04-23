@@ -1,19 +1,31 @@
-<table class="table table-boldered">
-  <% @courses.each do |course| %>
-  <tr>
+<div class="container">
 
-    <td>
-      <%= link_to(course.title, course_path(course)) %>
-    </td>
-    <td><%= image_tag course.image.url(:medium, class: "group_image")%>
-    </td>
-    <td>
-      <%= link_to("Edit", edit_course_path(course)) %> |
-      <%= link_to("Destroy", course_path(course), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
-    </td>
-    <td>
-      <%= course.created_at %>
-    </td>
-  </tr>
+
+  <div class="row">
+  <% @courses.each do |course| %>
+  <div class="col-sm-6 col-md-6">
+    <div class="panelcourse">
+      <div class="thumbnail box">
+        <a href="<%= course_path(course) %>"><img src="<%= course.image.url(:medium, class: "course_image")%>" ></a>
+      </div>
+      <div class="p-footer">
+        <div class="title">
+        <%= link_to(course.title, course_path(course)) %>
+        </div>
+        <div class="col-4 des"><%= course.description %></div>
+        <div class="col-2 follow">
+          <% if current_user && current_user.is_follower?(course) %>
+
+            <%= link_to(" 已关注", unfollow_course_path(course), method: :post, class: "fa fa-heart") %>
+
+          <% else %>
+
+            <%= link_to(" 未关注", follow_course_path(course), method: :post, class: "fa fa-heart-o") %>
+          <% end %></div>
+      </div>
+    </div>
+  </div>
   <% end %>
-</table>
+</div>
+
+</div>
