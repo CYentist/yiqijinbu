@@ -1,18 +1,31 @@
-<h2><%= @course.title %>活动列表</h2>
-<div class="list-item">
-  <div class="name">
-    <span class="meetup-name"><%= link_to(event.title, admin_course_event_path(@course,event)) %></span>
-  </div>
-  <div class="city">
-    <span><%= event.city %></span>
-  </div>
-  <div class="time">
-    <span><%= event.schedule %></span>
-  </div>
-  <div class="contact">
-    <span><%= event.user.email %></span>
-  </div>
-  <div class="option">
-    <%= link_to("查看", admin_course_event_path(@course,event), class:"btn btn-view")%>
-  </div>
-</div>
+
+
+
+    <tbody>
+      <tr>
+          <td>
+            <%= link_to(event.title, admin_course_event_path(@course,event)) %>
+          </td>
+          <td>
+            <%= event.city %>
+          </td>
+          <td>
+            <%= event.schedule %>
+          </td>
+          <td>
+            <%= event.contact_name %>
+          </td>
+          <td>
+            <%= event.contact_number %>
+          </td>
+          <td>
+            <% if current_user == event.user %>
+              <%= link_to("查看", admin_course_event_path(@course,event), class:"btn btn-sm btn-success")%>
+              <%= link_to("编辑",  edit_admin_course_event_path(@course,event), class:"btn btn-sm btn-primary")%>
+              <%= link_to("删除", admin_course_event_path(@course,event), class:"btn btn-sm btn-danger", :method => :delete, :data => { :confirm => "确认删除?" })%>
+            <% else %>
+              <%= link_to("查看", admin_course_event_path(@course,event), class:"btn btn-success")%>
+            <% end %>
+          </td>
+      </tr>
+  </tbody>

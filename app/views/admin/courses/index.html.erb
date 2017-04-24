@@ -1,7 +1,16 @@
 <div class="course">
     <%= link_to("Add a course", new_admin_course_path, class: "btn btn-primary pull-right") %>
   </div>
-<table class="table table-boldered">
+<table class="table table-boldered table-hover card">
+  <thead>
+      <tr>
+          <td>标题</td>
+          <td>发布时间</td>
+          <td>活动人数</td>
+          <td>关注者</td>
+          <td>管理</td>
+      </tr>
+  </thead>
   <% @courses.each do |course| %>
   <tr>
 
@@ -10,22 +19,26 @@
       <%= link_to(course.title, admin_course_path(course)) %>
     </td>
     <td>
-
+      <%= course.created_at %>
+    </td>
+    <td>
+      <%= link_to(course.events.count, admin_course_events_path(course))%>
+    </td>
+    <td>
+      <%= course.followers.count %>
+    </td>
+    <td>
         <%= link_to("Edit", edit_admin_course_path(course)) %>
         <%= link_to("Destroy", admin_course_path(course), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
 
-
         <% if course.is_hidden %>
-
           <%= link_to("Publish", publish_admin_course_path(course),  :method => :post, :class => "btn btn-xs btn-default") %>
         <% else %>
           <%= link_to("Hide", hide_admin_course_path(course),  :method => :post, :class => "btn btn-xs btn-default") %>
         <% end %>
 
     </td>
-    <td>
-      <%= course.created_at %>
-    </td>
+
   </tr>
   <% end %>
 </table>

@@ -8,12 +8,7 @@ class EventsController < ApplicationController
 
   def new
     @course = Course.find(params[:course_id])
-    if current_user.is_follower?(@course)
-      @event = Event.new
-    else
-      flash[:alert] = "你还未关注社群"
-      redirect_to course_path(@course)
-    end
+    @event = Event.new
   end
 
   def show

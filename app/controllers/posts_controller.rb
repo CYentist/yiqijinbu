@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+
   def index
     @event = Event.find(params[:event_id])
     @posts = @event.posts.order('created_at DESC')
@@ -24,6 +26,32 @@ class PostsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @course = Course.find(params[:course_id])
+    @event = Event.find(params[:event_id])
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @course = Course.find(params[:course_id])
+    @event = Event.find(params[:event_id])
+    @post = Post.find(params[:id])
+    if @post = Post.update(post_params)
+      redirect_to course_event_path(@course, @event), notice: "更新成功"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @course = Course.find(params[:course_id])
+    @event = Event.find(params[:event_id])
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:notice] = "删除成功"
+  end
+
 
   private
 

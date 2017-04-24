@@ -1,13 +1,34 @@
-<h1> <%= @course.title %> </h1>
+<div class="container col-md-12">
 
+  <div class="container card center2">
+    <h1> <%= @course.title %> </h1>
+  <div class="thumbnail col-md-4">
+      <%= image_tag @course.image.url(:medium, class: "course_image") %>
+  </div>
+  <div class="col-md-4 col-offet-4">
+      <%= simple_format(@course.description) %>
+  </div>
 
-<p>
-  <%= simple_format(@course.description) %>
+<div class="container">
 
-</p>
+</div>
+<div class="button">
+<%= link_to("发起活动", new_admin_course_event_path(@course), class: "btn btn-danger pull-left")%>
+</div>
 
-<%= link_to("发起活动", new_course_event_path(@course), class: "btn btn-default pull-right")%>
-<div>
+  <table class="table table-boldered table-striped table-hover custab">
+    <thead>
+        <tr>
+            <td>标题</td>
+            <td>地点</td>
+            <td>活动时间</td>
+            <td>联系人</td>
+            <td>联系方式</td>
+            <td>查看</td>
+        </tr>
+    </thead>
 
   <%= render :partial => "admin/events/events", :collection => @events, :as => :event %>
+  </table>
+</div>
 </div>

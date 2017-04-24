@@ -32,17 +32,25 @@ class Admin::EventsController < ApplicationController
   end
 
   def edit
+    @course = Course.find(params[:course_id])
     @event = Event.find(params[:id])
   end
 
   def update
+    @course = Course.find(params[:course_id])
     @event = Event.find(params[:id])
-    @event = Event.update(event_params)
+    if @event.update(event_params)
+      redirect_to admin_course_event_path(@course), notice: "更新成功"
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @course = Course.find(params[:course_id])
     @event = Event.find(params[:id])
     @event.destroy
+    redirect_to admin_course_path(@course), alert: "删除成功"
   end
 
 

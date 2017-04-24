@@ -5,7 +5,11 @@
   		<p><%= simple_format(post.content) %></p>
     </span>
     <ul class="actions" href="#">
-  		<li><a class="reply" href="#">编辑</a></li>
+      <% if current_user == post.user %>
+  		<li><a class="reply"><%= link_to("编辑",  edit_course_event_post_path(@course, @event, post))%></a></li>
+      <li><a class="reply"><%= link_to("删除", course_event_post_path(@course, @event, post), :method => :delete, :data => { :confirm => "确认删除?" })%></a></li>
+      
+      <% end %>
     </ul>
   </li>
 </ul>
