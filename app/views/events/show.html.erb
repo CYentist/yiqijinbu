@@ -1,9 +1,9 @@
 
-<div class="container-fluid">
+<div class="container">
 	<div class="row-fluid">
     <div class="col-1">
 		</div>
-		<div class="col-10 custab">
+		<div class="col-10 card">
 			<h3 class="page-header text-center">
 				<%= @event.title %>
 			</h3>
@@ -42,20 +42,24 @@
 		</div>
 	</div>
 </div>
+<div class="container">
+			<div class="card paper">
 <div>
+  <details>
+  <summary style="padding:1em;"><%= @event.posts.count %> 条评论</summary>
   <%= render :partial => "posts/post", :collection => @posts, :as => :post %>
+  </details>
 </div>
 
 
-<div align="center">
-        <%= link_to("回复", new_course_event_post_path(@course, @event), class: "btn btn-default") %>
-</div>
-
-<div class="col-md-4 col-md-offset-4">
+<div class="col-md-12">
   <%= simple_form_for [@course, @event, @post] do |f| %>
-  <div class="form-job">
-    <%= f.input :content, :label => " 内容" %>
-  </div>
-  <%= f.submit "提交", class: "btn btn-primary",  data: { disable_with:"Submitting..."} %>
+  <fieldset class="form-group">
+    <%= f.input :content, :label => "回复", placeholder: "输入内容"%>
+  </fieldset>
+  <%= f.submit "发送", class: "button btn btn-sm btn-success",  data: { disable_with:"发送中..."} %>
   <% end %>
+</div>
+
+</div>
 </div>

@@ -1,18 +1,11 @@
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="panel-title">
-                    <%= post.user.email %>
-                </h3>
-            </div>
-
-        </div>
-    </div>
-    <div class="panel-body">
-        <div class="trix-content">
-            <p> <%= simple_format(post.content) %> </p>
-        </div>
-      </div>
-
-</div>
+<ul class="list-group">
+  <li class="list-group-item ">
+    <span class="title">
+  	  <a href="#"><%= post.user.email %></a> <time> <%= post.created_at %></time>
+  		<p><%= simple_format(post.content) %></p>
+    </span>
+    <ul class="actions" href="#">
+  		<li><a class="reply" href="#">编辑</a></li>
+    </ul>
+  </li>
+</ul>
