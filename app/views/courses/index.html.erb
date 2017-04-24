@@ -4,7 +4,7 @@
   <div class="row">
   <% @courses.each do |course| %>
   <div class="col-sm-6 col-md-6">
-    <div class="panelcourse">
+    <div class="panelcourse card paper">
       <div class="thumbnail box">
         <a href="<%= course_path(course) %>"><img src="<%= course.image.url(:medium, class: "course_image")%>" ></a>
       </div>
@@ -12,7 +12,7 @@
         <div class="title">
         <%= link_to(course.title, course_path(course)) %>
         </div>
-        <div class="col-4 des"><%= course.description %></div>
+
         <div class="col-2 follow">
           <% if current_user && current_user.is_follower?(course) %>
 
@@ -22,6 +22,8 @@
 
             <%= link_to(" 未关注", follow_course_path(course), method: :post, class: "fa fa-heart-o") %>
           <% end %></div>
+          <hr />
+          <div class="col-4 des"><%= course.description %></div>
       </div>
     </div>
   </div>

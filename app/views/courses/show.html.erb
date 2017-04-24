@@ -14,14 +14,15 @@
         <% end %></div>
   </div>
 </div>
-<div class="center">
-    <%= image_tag @course.image.url(:medium, class: "course_image") %>
-</div>
-<div class="center">
-    <%= simple_format(@course.description) %>
+<div class="container card center2">
+  <div class="thumbnail col-md-4">
+      <%= image_tag @course.image.url(:medium, class: "course_image") %>
+  </div>
+  <div class="col-md-4 col-offet-4">
+      <%= simple_format(@course.description) %>
+  </div>
 </div>
 
-<div class="empty"></div>
 <div class="container">
 <div class="button">
 <%= link_to("发起活动", new_course_event_path(@course), class: "btn btn-default pull-right")%>
