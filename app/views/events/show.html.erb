@@ -1,21 +1,56 @@
-<div class="col-md-4 col-md-offset-4">
-  <h2><%= @event.title %></h2>
-  <table>
-    <tr>
-    <td><%= @event.description %></td>
-    <td><%= @event.schedule %></td>
-    <td><%= @event.city %></td>
-    <td><%= @event.contact_name %></td>
-    <td><%= @event.contact_number %></td>
-    </tr>
-  </table>
-  <div>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+    <div class="col-1">
+		</div>
+		<div class="col-10 custab">
+			<h3 class="page-header text-center">
+				<%= @event.title %>
+			</h3>
+      <div class="eventdes">
+        <p><%= simple_format(@event.description) %></p>
+
+      </div>
+			<dl class="dl-horizontal">
+				<dt>
+					活动时间
+				</dt>
+				<dd>
+					<%= @event.schedule %>
+				</dd>
+				<dt>
+					活动城市
+				</dt>
+				<dd>
+					<%= @event.city %>
+				</dd>
+				<dt>
+					联系人
+				</dt>
+				<dd>
+					<%= @event.contact_name %>
+				</dd>
+				<dt>
+					联系方式
+				</dt>
+				<dd>
+					<%= @event.contact_number %>
+				</dd>
+			</dl>
+		</div>
+    <div class="col-1">
+		</div>
+	</div>
+</div>
+<div>
   <%= render :partial => "posts/post", :collection => @posts, :as => :post %>
 </div>
-</div class="col-md-4 col-md-offset-4">
+
+
 <div align="center">
         <%= link_to("回复", new_course_event_post_path(@course, @event), class: "btn btn-default") %>
 </div>
+
 <div class="col-md-4 col-md-offset-4">
   <%= simple_form_for [@course, @event, @post] do |f| %>
   <div class="form-job">
@@ -23,5 +58,4 @@
   </div>
   <%= f.submit "提交", class: "btn btn-primary",  data: { disable_with:"Submitting..."} %>
   <% end %>
-
 </div>
