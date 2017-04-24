@@ -1,9 +1,15 @@
-<div class="course">
-    <%= link_to("Add a course", new_admin_course_path, class: "btn btn-primary pull-right") %>
-  </div>
+<div class="col-md-12 container">
+
+
 <table class="table table-boldered table-hover card">
   <thead>
+
+      <td>  <%= link_to("Add a course", new_admin_course_path, class: "btn btn-primary pull-right") %></td>
+
+    </thead>
+  <thead>
       <tr>
+
           <td>标题</td>
           <td>发布时间</td>
           <td>帖子数</td>
@@ -42,3 +48,4 @@
   </tr>
   <% end %>
 </table>
+</div>

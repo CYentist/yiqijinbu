@@ -3,7 +3,7 @@
 	<div class="row-fluid">
     <div class="col-1">
 		</div>
-		<div class="col-10 card">
+		<div class="col-md-10 card">
 			<h3 class="page-header text-center">
 				<%= @event.title %>
 			</h3>
@@ -43,13 +43,13 @@
 	</div>
 </div>
 <div class="container">
-			<div class="card paper">
-<div>
-  <details>
-  <summary style="padding:1em;"><%= @event.posts.count %> 条评论</summary>
-  <%= render :partial => "admin/posts/post", :collection => @posts, :as => :post %>
-  </details>
-</div>
+			<div class="col-md-10 card paper">
+      <div>
+        <details>
+        <summary style="padding:1em;"><%= @event.posts.count %> 条评论</summary>
+        <%= render :partial => "admin/posts/post", :collection => @posts, :as => :post %>
+        </details>
+      </div>
 
 
 <div class="col-md-12">
