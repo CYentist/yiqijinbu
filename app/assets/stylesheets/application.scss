@@ -468,6 +468,7 @@ body {
 	}
 
 	.a {
+    color: #E91E63;
 		text-decoration: none;
 	}
 
@@ -475,7 +476,38 @@ body {
 		outline: none;
 		border: none;
 	}
+.btn-danger {
+     color: white;//字体颜色
+     background-color: #E91E63;//背景颜色
+     margin-bottom: 20;
+}
+.btn-danger:hover {
+     color: white;//字体颜色
+     background-color: #E7487E;//背景颜色
+}
+.btn-success {
+  color: #E91E63;
+  background-color: transparent;
+  border: 1px solid #E91E63;
+  
+}
+.btn-success:hover {
 
+  background-color: #E91E63;
+  border: 1px solid #E91E63;
+}
+.btn-success:active {
+
+  background-color: #E91E63;
+  border: 1px solid #E91E63;
+}
+
+.table > a {
+
+    color: #E91E63;
+		text-decoration: none;
+
+}
 	.list-group-item p a {
 		font-weight: 500;
 		color: rgba(3, 161, 241, 1);

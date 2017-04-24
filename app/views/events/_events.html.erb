@@ -1,6 +1,6 @@
 
 
-    
+
     <tbody>
       <tr>
           <td>
@@ -19,10 +19,13 @@
             <%= event.contact_number %>
           </td>
           <td>
-            <%= event.created_at %>
-          </td>
-          <td>
-            <%= link_to("查看", course_event_path(@course,event), class:"btn btn-view")%>
+            <% if current_user == event.user %>
+              <%= link_to("查看", course_event_path(@course,event), class:"btn btn-sm btn-success")%>
+              <%= link_to("编辑",  edit_course_event_path(@course,event), class:"btn btn-sm btn-primary")%>
+              <%= link_to("删除", course_event_path(@course,event), class:"btn btn-sm btn-danger", :method => :delete, :data => { :confirm => "确认删除?" })%>
+            <% else %>
+              <%= link_to("查看", course_event_path(@course,event), class:"btn btn-success")%>
+            <% end %>
           </td>
       </tr>
   </tbody>
