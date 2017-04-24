@@ -2,19 +2,24 @@
 
   <div class="container card center2">
     <h1> <%= @course.title %> </h1>
+
   <div class="thumbnail col-md-4">
       <%= image_tag @course.image.url(:medium, class: "course_image") %>
   </div>
+
   <div class="col-md-4 col-offet-4">
       <%= simple_format(@course.description) %>
   </div>
-
+  <div class="button pull-right">
+    <i class="fa fa-heart" aria-hidden="true"><%= @course.followers.count%>人关注</i>
+  </div>
 <div class="container">
 
 </div>
 <div class="button">
 <%= link_to("发起活动", new_admin_course_event_path(@course), class: "btn btn-danger pull-left")%>
 </div>
+
 
   <table class="table table-boldered table-striped table-hover custab">
     <thead>

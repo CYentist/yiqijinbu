@@ -20,8 +20,11 @@ Rails.application.routes.draw do
         post :publish
         post :hide
       end
-    resources :events
+    resources :events do
+      resources :posts
     end
   end
+end
+
 
 end

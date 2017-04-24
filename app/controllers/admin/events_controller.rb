@@ -14,7 +14,9 @@ class Admin::EventsController < ApplicationController
   end
 
   def show
+    @course = Course.find(params[:course_id])
     @event = Event.find(params[:id])
+    @post = Post.new
   end
 
   def create

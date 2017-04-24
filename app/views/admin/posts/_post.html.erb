@@ -6,9 +6,8 @@
     </span>
     <ul class="actions" href="#">
       <% if current_user == post.user %>
-  		<li><a class="reply"><%= link_to("编辑",  edit_course_event_post_path(@course, @event, post))%></a></li>
-      <li><a class="reply"><%= link_to("删除", course_event_post_path(@course, @event, post), :method => :delete, :data => { :confirm => "确认删除?" })%></a></li>
-
+  		<li><a class="reply"><%= link_to("编辑",  edit_admin_course_event_post_path(@course, @event, post))%></a></li>
+      <li><a class="reply"><%= link_to("删除", admin_course_event_post_path(@course, @event, post), :method => :delete, :data => { :confirm => "确认删除?" })%></a></li>
       <% end %>
     </ul>
   </li>

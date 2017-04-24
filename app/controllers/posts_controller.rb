@@ -37,7 +37,8 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
     @course = Course.find(params[:course_id])
     @event = Event.find(params[:event_id])
     @post = Post.find(params[:id])
-    if @post = Post.update(post_params)
+
+    if @post.update(post_params)
       redirect_to course_event_path(@course, @event), notice: "更新成功"
     else
       render :edit
@@ -49,7 +50,8 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
     @event = Event.find(params[:event_id])
     @post = Post.find(params[:id])
     @post.destroy
-    flash[:notice] = "删除成功"
+    flash[:alert] = "删除成功"
+    redirect_to :back
   end
 
 
