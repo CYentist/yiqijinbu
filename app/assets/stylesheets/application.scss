@@ -759,3 +759,150 @@ body {
   .login-help{
     font-size: 12px;
   }
+// about_us
+header {
+    margin-top: 0;
+    background: url("http://odv1eilcn.bkt.clouddn.com/images/2017-04-22-part1.jpg");
+    min-height: 500px;
+    background-size: cover;
+    display: table;
+    width: 100vw;
+}
+header h1 {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 3em;
+    color:white;
+}
+
+.background-bar {
+    background: #dedede;
+    height: auto;
+
+
+}
+
+.main-body {
+    background: #ffffff;
+    -webkit-box-shadow: 0px -4px 14px 0px rgba(50, 50, 50, 0.35);
+    -moz-box-shadow:    0px -4px 14px 0px rgba(50, 50, 50, 0.35);
+    box-shadow:         0px -4px 14px 0px rgba(50, 50, 50, 0.35);
+}
+
+.content-holder {
+    margin-top: -140px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 2px;
+}
+
+.content-description {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background: #fff;
+    height: 130px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 12px 4px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 0px 12px 4px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 0px 12px 4px rgba(50, 50, 50, 0.75);
+}
+
+.author-social {
+    position: absolute;
+    margin-top: -35px;
+}
+.author-social-left {
+    left : 0;
+    width: 40%;
+    text-align: right;
+}
+.author-social-right {
+    right : 0;
+    width: 40%;
+}
+.author-social img {
+    background: #e8e8e8;
+    border-radius: 50%;
+    border: 2px solid #e8e8e8;
+}
+
+.author-avatar {
+    text-align:center;
+    margin-top: -70px;
+}
+.author-avatar img {
+    width: 100px;
+    border: 4px solid #e8e8e8;
+    -webkit-box-shadow: 0px 0px 12px 4px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 0px 12px 4px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 0px 12px 4px rgba(50, 50, 50, 0.75);
+}
+.author-name {
+    text-align:center;
+}
+.blog-info {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.content-body {
+    background: #fff;
+    min-height: 600px;
+    padding: 40px 40px;
+    color: #303030;
+    font-size: 14px;
+    letter-spacing: 0.8px;
+    line-height: 30px;
+}
+
+@media(max-width:768px){
+    header {
+        min-height: 300px;
+    }
+    .author-avatar {
+        margin-top: -50px;
+    }
+	.author-avatar img {
+	    width: 75px;
+	}
+	.author-name h3 {
+	    font-size: 1.2em;
+	}
+	.author-social {
+	    margin-top: -25px;
+	}
+	.author-social img {
+	    width: 32px;
+	}
+}
+//footer
+.def-footer{
+  position:relative;
+  .help-link{
+    float:left;
+    margin:0 40px;
+    li{
+    padding:0 10px;
+    }
+  }
+
+  .copyright-info{
+    float:right;
+    margin:0 40px;
+  }
+}
+.site-footer, .page-wrap:after {
+  margin-top: 40px;
+  height: 70px;
+}
+.site-footer {
+  background: #C51162;
+  color: white;
+  padding-top: 20px;
+  a:link {color: white};
+  a:visited {color: white}	;
+  a:hover {color: white}	;
+  a:active {color: white};
+}

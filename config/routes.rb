@@ -20,11 +20,12 @@ Rails.application.routes.draw do
         post :publish
         post :hide
       end
-    resources :events do
-      resources :posts
+      resources :events do
+        resources :posts
+      end
+      end
     end
-  end
-end
-
+    
+  get "/about_us", to: "welcome#about_us"
 
 end
