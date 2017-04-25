@@ -456,9 +456,10 @@
   margin-bottom: 40px;
 }
 //event show
-.dl-horizontal > dt {
-  margin:10px;
+.dl-horizontal > dt,dd {
+  line-height: 30px;
 }
+
 .eventdes {
   float:left;
   width: 100%;
