@@ -3,6 +3,7 @@
 <%= f.input :title %>
 <%= f.input :description %>
 <%= f.input :is_hidden %>
+<%= image_tag @course.image.url(:medium, class: "course_image") %>
 <%= f.input :image, as: :file %>
 
   <%= f.submit "Submit" %>

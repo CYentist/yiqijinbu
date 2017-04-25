@@ -300,19 +300,26 @@
   background: #fff;
   position: relative;
   border: none;
-  .img {
-   max-width: 100%;
-   height: auto;
-   display: block;
-   transition: all 0.2s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
-   -webkit-transition: all 0.2s;
-   -webkit-transition:all 0.2s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
-   -moz-transition:all 0.2s ease-in-out; /*让「火狐浏览器」支持这个属性*/
-   -o-transition:all 0.2s ease-in-out; /*让「safari」支持属性*/
-   -ms-transition:all 0.2s ease-in-out; /*让「IE浏览器」支持这个属性*/
- }
+  background-position: center center;
+  background-repeat: no-repeat;
+
+
 }
 
+.box img {
+  height: 100%;
+  width: 100%;
+  filter: alpha(opacity=100);
+  /* modern browsers */
+  opacity: 100;
+
+ transition: all 0.2s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
+ -webkit-transition: all 0.2s;
+ -webkit-transition:all 0.2s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
+ -moz-transition:all 0.2s ease-in-out; /*让「火狐浏览器」支持这个属性*/
+ -o-transition:all 0.2s ease-in-out; /*让「safari」支持属性*/
+ -ms-transition:all 0.2s ease-in-out; /*让「IE浏览器」支持这个属性*/
+}
 .box:hover img {
   transform: scale(1.1); /*在400ms内，图片的尺寸从 1倍 放大到 1.2倍*/
   -webkit-transform: scale(1.1);
@@ -358,9 +365,7 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
   }
- .thumbnail {
-   border-radius: none;
- }
+
   .follow {
     float: right;
     display: inline;
@@ -375,7 +380,10 @@
   }
 
 }
-
+.thumbnail {
+   border: none;
+   border-radius: none;
+ }
 //-- course show
 .coursepage {
   display: block;

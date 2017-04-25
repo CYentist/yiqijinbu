@@ -15,8 +15,8 @@
   </div>
 </div>
 <div class="container card center2">
-  <div class="thumbnail col-md-4">
-      <%= image_tag @course.image.url(:medium, class: "course_image") %>
+  <div class="thumbnail">
+      <%= image_tag @course.image.url(:original, class: "course_image") %>
   </div>
   <div class="col-md-4 col-offet-4">
       <%= simple_format(@course.description) %>

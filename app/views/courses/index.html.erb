@@ -5,8 +5,8 @@
   <% @courses.each do |course| %>
   <div class="col-sm-6 col-md-6">
     <div class="panelcourse card paper">
-      <div class="thumbnail box">
-        <a href="<%= course_path(course) %>"><img src="<%= course.image.url(:medium, class: "course_image")%>" ></a>
+      <div class="box thumbnail">
+        <a href="<%= course_path(course) %>"><img src="<%= course.image.url(:original)%>" ></a>
       </div>
       <div class="p-footer">
         <div class="title">
