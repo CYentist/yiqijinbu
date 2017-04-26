@@ -24,7 +24,7 @@
               <%= link_to("编辑",  edit_course_event_path(@course,event), class:"btn btn-sm btn-primary")%>
               <%= link_to("删除", course_event_path(@course,event), class:"btn btn-sm btn-danger", :method => :delete, :data => { :confirm => "确认删除?" })%>
             <% else %>
-              <%= link_to("查看", course_event_path(@course,event), class:"btn btn-success")%>
+              <%= link_to("查看", course_event_path(@course,event), class:"btn btn-sm  btn-success")%>
             <% end %>
           </td>
       </tr>
