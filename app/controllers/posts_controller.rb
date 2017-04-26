@@ -20,7 +20,6 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
     @post.user = current_user
 
     if @post.save
-      flash[:notice] = "发帖成功"
       redirect_to course_event_path(@course, @event)
     else
       render :new
@@ -50,7 +49,6 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
     @event = Event.find(params[:event_id])
     @post = Post.find(params[:id])
     @post.destroy
-    flash[:alert] = "删除成功"
     redirect_to :back
   end
 

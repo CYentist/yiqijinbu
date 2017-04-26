@@ -42,15 +42,18 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    @course = Course.find(params[:course_id])
     @event = Event.find(params[:id])
     @event.destroy
+    flash[:alert] = "成功删除活动"
+    redirect_to course_path(@course)
   end
 
 
     private
 
     def event_params
-      params.require(:event).permit(:title, :description, :course_id, :user_id, :schedule, :city, :is_online, :contac_name, :contac_number)
+      params.require(:event).permit(:title, :description, :course_id, :user_id, :schedule, :city, :is_online, :contact_name, :contact_number)
     end
 
   end
