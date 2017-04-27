@@ -61,8 +61,8 @@ c.description = '极速读书方法，提炼原书观点精粹，过滤庞杂信
 c.save
 c = Course.new
 c.title = '解密大数据'
-c.description = '人人都能用数据！了解和掌握大数据的思维、价值、入门途径和实际案例
-定期主题分享、讨论和答疑环节,全员参与讨论和输出,每月一次的资料整理和共享,对群内成员免费的嘉宾分享'
+c.description = '本社群是Tiger为了顺应大数据时代降临，方便大家入门和深入学习数据而创办的服务。
+解密大数据社群旨在为难以入门数据分析的朋友们提供学习和成长的平台，为此我们集合了中美两国的数据大咖（从北美名校博士到一流数据科学家，遍布硅谷和BAT），倾心打造了解密大数据系列精品课程（目前设有三门课：商业数据分析/机器学习/爬虫），提供完整的从数据小白到分析达人的落地方案。'
 c.save
 c = Course.new
 c.title = '不亦悦乎'
@@ -113,7 +113,6 @@ events_test=Event_demo[rand(0..7)]
 f=events_test[5]
 events_test=Event_demo[rand(0..7)]
 g=events_test[6]
-events_test=Event_demo[rand(0..7)]
 h=events_test[7]
 Event.create!([title:a,description:b,course_id:c,user_id:d,schedule:e,city:f,contact_name:g,contact_number:h])
 end
