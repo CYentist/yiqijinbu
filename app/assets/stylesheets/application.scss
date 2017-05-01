@@ -195,6 +195,71 @@
     }
   }
 }
+.lp-part-4 {
+  display: block;
+  width: 100%;
+  .lp-block-content {
+    display: block;
+    position: relative;
+    padding-top: 50px;
+    .block-title {
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+      color: #E91E63;
+      padding :15px 0 20px 0;
+    }
+  }
+}
+
+//Carousel
+/* Removes the default 20px margin and creates some padding space for the indicators and controls */
+.well {
+  background: linear-gradient(to bottom, transparent, #DA729A, #E91E63);
+  opacity: 20;
+  border: none;
+}
+.carousel {
+  margin-bottom: 0;
+	padding: 20px;
+}
+/* Reposition the controls slightly */
+.carousel-control {
+  background: none !important;
+}
+.carousel-control.left {
+  margin-left: -80px;
+}
+.carousel-control.right {
+  margin-right: -80px;
+}
+
+/* Changes the position of the indicators */
+
+
+.item {
+  .thumbnail2 {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  overflow: hidden; /* hide the cropped portion */
+
+}
+}
+
+.thumbnail2 img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+  }
+
+
+
 .lp-part-5 {
     display: block;
     background: #E91E63;
@@ -379,12 +444,12 @@
       color: #C51162;
     }
   }
-
+  .thumbnail {
+     border: none;
+     border-radius: none;
+   }
 }
-.thumbnail {
-   border: none;
-   border-radius: none;
- }
+
 //-- course show
 .coursepage {
   display: block;
@@ -439,7 +504,6 @@
   padding: 5px;
   margin: 5% 0;
   box-shadow: 3px 3px 2px #ccc;
-
   transition: 0.5s;
 }
 
