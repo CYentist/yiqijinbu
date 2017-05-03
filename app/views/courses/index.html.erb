@@ -1,6 +1,5 @@
 <div class="container">
 
-
   <div class="row">
   <% @courses.each do |course| %>
   <div class="col-sm-6 col-md-6">
@@ -13,17 +12,19 @@
         <%= link_to(course.title, course_path(course)) %>
         </div>
 
-        <div class="col-2 follow">
-          <% if current_user && current_user.is_follower?(course) %>
 
-            <%= link_to(" 已关注", unfollow_course_path(course), method: :post, class: "fa fa-heart") %>
-
-          <% else %>
-
-            <%= link_to(" 未关注", follow_course_path(course), method: :post, class: "fa fa-heart-o") %>
-          <% end %></div>
           <hr />
           <div class="col-4 des"><%= course.description %></div>
+          <div class="col-2 follow">
+            <p class="fa fa-users "> <%= course.followers.count %>关注</p></br>
+            <% if current_user && current_user.is_follower?(course) %>
+
+              <%= link_to(" 已关注", unfollow_course_path(course), method: :post, class: "fa fa-heart") %>
+
+            <% else %>
+
+              <%= link_to(" 未关注", follow_course_path(course), method: :post, class: "fa fa-heart-o") %>
+            <% end %></div>
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@ class CoursesController < ApplicationController
 before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy, :follow, :unfollow]
 
     def index
-      @courses = Course.where(:is_hidden => false).recent
+      @courses = Course.published.recent
 
     end
 
