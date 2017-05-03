@@ -198,6 +198,9 @@
 .lp-part-4 {
   display: block;
   width: 100%;
+  min-width: 960px;
+  background: linear-gradient(to bottom, transparent, #DA729A, #E91E63);
+
   .lp-block-content {
     display: block;
     position: relative;
@@ -215,9 +218,11 @@
 //Carousel
 /* Removes the default 20px margin and creates some padding space for the indicators and controls */
 .well {
-  background: linear-gradient(to bottom, transparent, #DA729A, #E91E63);
+  min-width: 960px;
   opacity: 20;
   border: none;
+  background:transparent;
+  
 }
 .carousel {
   margin-bottom: 0;
