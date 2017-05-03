@@ -1,3 +1,5 @@
+<div class="container-fluid">
+  <div class="row">
 <div class="lp-part-1">
   <div class="lp-block-1">
     <h1>找到战友 一起进步</h1>
@@ -68,7 +70,7 @@
 
                 <div class="item active">
                   <div class="row-fluid">
-                  <% Course.recent.limit(3).each do |course| %>
+                  <% Course.published.recent.limit(3).each do |course| %>
                 	  <div class="col-xs-4 col-sm-4 col-md-4">
                       <div class="thumbnail2 custab">
                       <a href="<%= course_path(course) %>"><img src="<%= course.image.url(:medium)%>" alt="Image"/></a></div>
@@ -79,7 +81,7 @@
 
                 <div class="item">
                   <div class="row-fluid">
-                  <% Course.recent.offset(3).limit(3).each do |course| %>
+                  <% Course.published.recent.offset(3).limit(3).each do |course| %>
                 	  <div class="col-xs-4 col-sm-4 col-md-4"><a href="<%= course_path(course) %>">
                       <div class="thumbnail2 custab">
                       <img src="<%= course.image.url(:medium)%>" alt="Image" /></a></div>
@@ -145,3 +147,5 @@
         <%= link_to("立刻体验", courses_path,class:"lp-block-1-button") %>
     </div>
   </div>
+</div>
+</div>
